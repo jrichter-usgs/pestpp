@@ -28,7 +28,7 @@ RUN       sysDeps="liblapack-dev \
 #ARG        LD_LIBRARY_PATH=/opt/ffmpeg/lib
 
 RUN \
-         cd src && \
+         cd ../../src && \
          COMPILER=gcc6 CXX=g++-6 FC=gfortran-6 STATIC=no make install
 
 ### miniconda - Failing on Alpine OS images
