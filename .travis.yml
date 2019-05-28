@@ -42,9 +42,9 @@ git:
 env:
   global:
     - MAKEFLAGS="-j 2"
+    - image="jrichter-usgs/pestpp:latest"
 
 before_script:
-  - image="jrichter-usgs/pestpp:latest"
         #  - cd src
         #  - rm -r -f ../bin/linux/
         #  - make clean
