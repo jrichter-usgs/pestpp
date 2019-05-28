@@ -70,7 +70,7 @@ before_script:
         #  - nosetests -v -w ./benchmarks basic_tests.py
 
 script:
-  - docker build -t "${image}" --build-arg MAKEFLAGS="-j$(($(grep -c ^processor /proc/cpuinfo) + 1))" docker-images/${VERSION}/${VARIANT}
+  - docker build -t "${image}" --build-arg MAKEFLAGS="-j$(($(grep -c ^processor /proc/cpuinfo) + 1))" docker-images/python
     #  - git clone -b master --depth 1 $TEST_REPO  
     #  - cd $TEST_DIR
     #  - nosetests -v $TEST_SCRIPT
