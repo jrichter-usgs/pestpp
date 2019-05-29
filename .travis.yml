@@ -71,7 +71,7 @@ before_script:
 
 script:
     #- docker build -t "${image}" --build-arg MAKEFLAGS="-j$(($(grep -c ^processor /proc/cpuinfo) + 1))" docker-images/python
-        - docker run "${image}" nosetests -v -w ./benchmarks basic_tests.py
+        - docker run "${image}" /root/miniconda/bin/nosetests -v -w ./benchmarks basic_tests.py
     #  - git clone -b master --depth 1 $TEST_REPO  
     #  - cd $TEST_DIR
     #  - nosetests -v $TEST_SCRIPT
