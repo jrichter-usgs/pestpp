@@ -25,7 +25,9 @@ RUN       sysDeps="liblapack-dev \
 #FROM        base AS build
 
 
-#ARG        LD_LIBRARY_PATH=/opt/ffmpeg/lib
+ARG      pyemu_path=/root/miniconda/bin
+ENV      DISPLAY=":99.0"
+ENV      PATH="$pyemu_path:${PATH}"
 
 RUN \
          cd src && \
@@ -50,11 +52,12 @@ RUN      $HOME/miniconda/bin/conda install --yes -c conda-forge flopy
 
 
 ### pyemu
-RUN     git clone --depth 1 --single-branch -b develop https://github.com/jtwhite79/pyemu.git && \
-        cd pyemu && \
-        python setup.py install && \
-        cd ../ && \
-        rm -rf pyemu
+RUN     pip install pyemu
+#RUN     git clone --depth 1 --single-branch -b develop https://github.com/jtwhite79/pyemu.git && \
+#        cd pyemu && \
+#        python setup.py install && \
+#        cd ../ && \
+#        rm -rf pyemu
 
         
 

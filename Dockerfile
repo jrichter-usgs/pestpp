@@ -26,7 +26,8 @@ RUN       sysDeps="liblapack-dev \
 
 
 ARG      pyemu_path=/root/miniconda/bin
-#ENV      P
+ENV      DISPLAY=":99.0"
+ENV      PATH="$pyemu_path:${PATH}"
 
 RUN \
          cd src && \
